@@ -1,0 +1,235 @@
+export const programList = [
+  {
+    id: 'program-1',
+    code: 'Program 1',
+    volumeGroup: 'program-1',
+    volLabel: 'Vol.1',
+    title: 'Program 1 : Restart Mindset and Character Class',
+    subtitle: 'Restart Mindset and Character Class',
+    category: 'Pemberdayaan Mental & Skill',
+    status: 'Program Unggulan',
+    icon: '🚀',
+    summary:
+      'Kegiatan ini menjadi langkah awal dalam membentuk pola pikir berkembang (growth mindset) serta karakter positif anak panti melalui pembelajaran yang interaktif dan inspiratif.',
+    description:
+      'Kegiatan ini menjadi langkah awal dalam membentuk pola pikir berkembang (growth mindset) serta karakter positif anak panti melalui pembelajaran yang interaktif dan inspiratif. Rangkaian kegiatan meliputi sesi motivasi, edukasi nilai karakter, simulasi kewirausahaan sederhana, tes minat dan bakat, serta Focus Group Discussion (FGD). Melalui program ini, peserta diharapkan memiliki kepercayaan diri yang lebih baik, mampu mengenali potensi diri, serta memandang kewirausahaan sebagai salah satu peluang untuk mencapai kemandirian di masa depan.',
+    target: 'Seluruh anak binaan & remaja Panti Wira Adhi Karya Ungaran.',
+    duration: '3 Bulan (Sesi Mingguan)',
+    outcomes: [
+      'Peningkatan rasa percaya diri dan kemandirian peserta.',
+      'Pemahaman dasar konsep kewirausahaan dan ide bisnis.',
+      'Kemampuan komunikasi publik dan kerjasama tim.',
+    ],
+    activities: [
+      'Sesi Motivasi & Edukasi Nilai Karakter Positif',
+      'Pembentukan Growth Mindset & Tes Minat Bakat',
+      'Simulasi Kewirausahaan Sederhana & Focus Group Discussion (FGD)',
+    ],
+    photos: [
+      '/images/program-1-photo-1.png',
+      '/images/program-1-photo-2.png',
+      '/images/program-1-photo-3.png',
+      '/images/program-1-photo-4.png',
+    ],
+  },
+  {
+    id: 'program-2-vol-1',
+    code: 'Program 2 Vol.1',
+    volumeGroup: 'program-2',
+    volLabel: 'Vol.1',
+    title: 'Program 2 Vol.1 : Restart Literacy and Life Skills Training',
+    subtitle: 'Modul Dasar: Calistung Bisnis & Konsep Keuangan Aplikatif',
+    category: 'Literasi & Keterampilan Hidup',
+    status: 'Sedang Berjalan',
+    icon: '📚',
+    summary:
+      'Pelatihan tahap awal peningkatan kemampuan literasi, berhitung bisnis dasar, serta pengelolaan uang saku dan usaha bagi anak panti.',
+    description:
+      'Program 2 Vol.1 merupakan tahap dasar pelatihan literasi dan calistung bisnis aplikatif. Peserta diajarkan konsep dasar pencatatan modal usaha, pengenalan istilah kewirausahaan, serta simulasi transaksi harian untuk membangun fondasi keterampilan hidup menuju kemandirian.',
+    target: 'Penghuni panti & anak binaan pemula Panti Wira Adhi Karya Ungaran.',
+    duration: 'Berkelanjutan / Sesi Mingguan',
+    outcomes: [
+      'Kemampuan membaca dan menghitung transaksi bisnis dasar.',
+      'Pengenalan istilah operasional usaha & modal sederhana.',
+      'Disiplin pencatatan keuangan harian mandiri.',
+    ],
+    activities: [
+      'Pembelajaran Calistung Bisnis Aplikatif Dasar',
+      'Edukasi Perencanaan Uang Saku & Modal Usaha',
+      'Latihan Lembar Kerja Transaksi Bisnis Sederhana',
+    ],
+    photos: [
+      '/images/program-vol-2-1-photo-1.jpg',
+      '/images/program-vol-2-1-photo-2.jpg',
+      '/images/program-vol-2-1-photo-3.jpg',
+      '/images/program-vol-2-1-photo-4.jpg',
+    ],
+  },
+  {
+    id: 'program-2-vol-2',
+    code: 'Program 2 Vol.2',
+    volumeGroup: 'program-2',
+    volLabel: 'Vol.2',
+    title: 'Program 2 Vol.2 : Advanced Life Skills & Business Practice',
+    subtitle: 'Modul Lanjutan: Praktik Studi Kasus HPP, BEP & Laba Rugi',
+    category: 'Literasi & Keterampilan Hidup',
+    status: 'Program Unggulan',
+    icon: '💡',
+    summary:
+      'Praktik pendalaman studi kasus penyelesaian lembar kerja perhitungan HPP, penetapan harga jual, analisis laba rugi, dan titik impas (BEP).',
+    description:
+      'Program 2 Vol.2 membawa peserta ke tingkat praktik simulasi bisnis nyata. Menggunakan studi kasus produk hasil karya panti, peserta mempraktikkan langsung perhitungan Harga Pokok Produksi (HPP), estimasi margin keuntungan yang aman, hingga analisis Break Even Point (BEP).',
+    target: 'Peserta program tingkat lanjutan & calon pengelola usaha panti.',
+    duration: '2 Bulan (Praktik Intensif)',
+    outcomes: [
+      'Kemampuan menghitung HPP & BEP produk secara mandiri.',
+      'Analisis margin keuntungan & kelayakan harga jual.',
+      'Penerapan langsung pada produk marketplace panti.',
+    ],
+    activities: [
+      'Praktik Studi Kasus Perhitungan HPP & BEP Produk Panti',
+      'Simulasi Penetapan Harga Jual Bersaing & Analisis Laba Rugi',
+      'Penyusunan Perencanaan Usaha Mandiri Berkelanjutan',
+    ],
+    photos: [
+      '/images/program-2-photo-1.jpg',
+      '/images/program-2-photo-2.jpg',
+      '/images/program-2-photo-3.jpg',
+      '/images/program-2-photo-4.jpg',
+    ],
+  },
+  {
+    id: 'program-3-vol-1',
+    code: 'Program 3 Vol.1',
+    volumeGroup: 'program-3',
+    volLabel: 'Vol.1',
+    title: 'Program 3 Vol.1 : Pelatihan & Praktek Produk',
+    subtitle: 'Modul Dasar: Praktik Produksi Pangan & Kewirausahaan Nyata',
+    category: 'Pemasaran & Teknologi',
+    status: 'Sedang Berjalan',
+    icon: '📷',
+    summary:
+      'Praktik pembuatan es cincau dan singkong serut mulai dari persiapan bahan hingga produk siap saji untuk melatih keterampilan produksi pangan dan wirausaha sosial.',
+    description:
+      'Kegiatan ini merupakan sesi praktik langsung dalam rangkaian Restart Social and Entrepreneur Lab, di mana peserta mempraktikkan pembuatan es cincau dan singkong serut mulai dari persiapan bahan hingga produk siap saji. Melalui praktik ini, peserta belajar menerapkan konsep kewirausahaan secara nyata sekaligus melatih keterampilan produksi pangan sederhana. Program ini diharapkan mampu menumbuhkan semangat wirausaha sosial peserta dan membekali mereka dengan keterampilan praktis untuk usaha mandiri.',
+    target: 'Seluruh anak binaan & pengelola unit produksi panti.',
+    duration: '2 Bulan (Praktik Produksi & Pemasaran)',
+    outcomes: [
+      'Keterampilan memproduksi olahan pangan siap saji (es cincau & singkong serut).',
+      'Penerapan konsep kewirausahaan dan standar kebersihan produksi.',
+      'Kemandirian wirausaha sosial bagi anak binaan panti.',
+    ],
+    activities: [
+      'Persiapan Bahan Baku & Pengenalan Resep Olahan Pangan',
+      'Praktik Langsung Pembuatan Es Cincau & Singkong Serut',
+      'Uji Cita Rasa, Pengemasan & Dokumentasi Produk Siap Jual',
+    ],
+    photos: [
+      '/images/program-3-photo-1.jpg',
+      '/images/program-3-photo-2.jpg',
+      '/images/program-3-photo-3.jpg',
+      '/images/program-3-photo-4.jpg',
+    ],
+  },
+  {
+    id: 'program-3-vol-2',
+    code: 'Program 3 Vol.2',
+    volumeGroup: 'program-3',
+    volLabel: 'Vol.2',
+    title: 'Program 3 Vol.2 : Desain Canva, Pembuatan Logo & Poster Usaha',
+    subtitle: 'Modul Lanjutan: Pelatihan Desain Grafis Digital & Branding Usaha Mandiri',
+    category: 'Pemasaran & Teknologi',
+    status: 'Program Unggulan',
+    icon: '🎨',
+    summary:
+      'Pemaparan materi editing Canva mencakup tutorial pembuatan poster dan logo, dilanjutkan dengan praktik langsung membuat poster dan logo usaha mereka sendiri.',
+    description:
+      'Kegiatan ini merupakan sesi pemaparan materi dan praktik langsung dalam rangkaian Restart Social and Entrepreneur Lab, di mana peserta diberikan materi editing Canva mencakup tutorial pembuatan poster dan logo, dilanjutkan dengan praktik langsung membuat poster dan logo usaha mereka sendiri. Melalui kegiatan ini, peserta belajar menerapkan keterampilan desain digital sederhana sebagai bekal branding untuk mendukung usaha mandiri mereka.',
+    target: 'Anak binaan, tim promosi, dan calon pengelola usaha mandiri panti.',
+    duration: '2 Bulan (Praktik Desain & Branding Digital)',
+    outcomes: [
+      'Penguasaan aplikasi Canva untuk pembuatan materi promosi digital.',
+      'Kemampuan merancang logo dan poster usaha mandiri yang menarik.',
+      'Penerapan identitas visual dan branding untuk produk hasil karya panti.',
+    ],
+    activities: [
+      'Pemaparan Fitur-Fitur Canva & Konsep Branding Visual',
+      'Tutorial Langkah Demi Langkah Membuat Logo & Poster Usaha',
+      'Praktik Mandiri & Pendampingan Pembuatan Identitas Visual Produk',
+    ],
+     photos: [
+      '/images/program-3-vol-2-photo-1.jpg',
+      '/images/program-3-vol-2-photo-2.jpg',
+      '/images/program-3-vol-2-photo-3.jpg',
+      '/images/program-3-vol-2-photo-4.jpg',
+    ],
+  },
+  {
+    id: 'program-4-vol-1',
+    code: 'Program 4 Vol.1',
+    volumeGroup: 'program-4',
+    volLabel: 'Vol.1',
+    title: 'Program 4 Vol.1 : Literasi Digital & Serah Terima Website Resmi Panti',
+    subtitle: 'Modul Dasar: Pengenalan, Pengelolaan & Pemanfaatan Website Usaha',
+    category: 'Teknologi & Keberlanjutan Usaha',
+    status: 'Sedang Berjalan',
+    icon: '🌐',
+    summary:
+      'Pemaparan materi literasi digital seputar website dan serah terima website resmi panti sebagai identitas digital serta sarana promosi dan penjualan produk online.',
+    description:
+      'Kegiatan ini merupakan sesi pemaparan materi literasi digital seputar website dalam rangkaian Restart Evolution and Sustainability, mencakup pemahaman dasar mengenai fungsi dan pengelolaan website sebagai media digital usaha. Pada program ini juga dilakukan serah terima website resmi panti untuk digunakan sebagai identitas digital sekaligus sarana promosi dan penjualan produk usaha panti secara online. Melalui kegiatan ini, pengelola panti dibekali pemahaman untuk mengoperasikan website tersebut secara mandiri demi keberlanjutan usaha mereka.',
+    target: 'Pengelola panti, staf operasional, dan anak binaan panti.',
+    duration: '2 Bulan (Pendampingan & Serah Terima Website)',
+    outcomes: [
+      'Pemahaman menyeluruh mengenai fungsi dan pengelolaan website resmi panti.',
+      'Kemandirian pengelola panti dalam mengoperasikan media promosi digital.',
+      'Pemanfaatan website sebagai sarana pemasaran dan transparansi profil panti.',
+    ],
+    activities: [
+      'Pemaparan Konsep Literasi Digital & Fitur Website Resmi Panti',
+      'Praktik Navigasi, Input Data & Pengelolaan Konten Website',
+      'Serah Terima Resmi Website Panti untuk Keberlanjutan Usaha Mandiri',
+    ],
+     photos: [
+      '/images/program-4-vol-1-photo-1.jpg',
+      '/images/program-4-vol-1-photo-2.jpg',
+      '/images/program-4-vol-1-photo-3.jpg',
+      '/images/program-4-vol-1-photo-4.jpg',
+    ],
+  },
+  {
+    id: 'program-4-vol-2',
+    code: 'Program 4 Vol.2',
+    volumeGroup: 'program-4',
+    volLabel: 'Vol.2',
+    title: 'Program 4 Vol.2 : Expo',
+    subtitle: 'Penerapan Jualan Langsung & Expo',
+    category: 'Manajemen & Keberlanjutan Usaha',
+    status: 'Program Unggulan',
+    icon: '🏪',
+    summary:
+      'Expo penjualan produk usaha panti dalam rangkaian Restart Evolution and Sustainability di Alun-Alun Bung Karno Ungaran — praktik langsung berjualan dan berinteraksi dengan konsumen.',
+    description:
+      'Kegiatan ini merupakan expo penjualan produk usaha panti dalam rangkaian Restart Evolution and Sustainability, yang dilaksanakan di Alun-Alun Bung Karno Ungaran. Pada program ini, anak-anak panti mempraktikkan langsung hasil pelatihan kewirausahaan dengan menjual produk usaha seperti es cincau, singkong serut, coffee, dan aneka bakaran kepada pengunjung expo. Melalui kegiatan ini, anak panti dilatih untuk mengasah kemampuan berjualan, berinteraksi langsung dengan konsumen, serta mengelola usaha secara mandiri sebagai bekal keberlanjutan usaha mereka.',
+    target: 'Anak binaan, pengelola usaha, dan seluruh peserta program panti.',
+    duration: '1 Hari (Expo Penjualan Langsung)',
+    outcomes: [
+      'Kemampuan berjualan langsung dan berinteraksi dengan konsumen secara mandiri.',
+      'Penerapan praktis hasil pelatihan kewirausahaan dalam situasi nyata.',
+      'Pengalaman mengelola usaha penjualan produk pangan di area publik.',
+    ],
+    activities: [
+      'Expo Penjualan Produk Panti di Alun-Alun Bung Karno Ungaran',
+      'Interaksi Langsung dengan Konsumen & Praktik Pemasaran',
+      'Pengelolaan Mandiri Stand Penjualan Es Cincau, Singkong Serut & Bakaran',
+    ],
+    photos: [
+      '/images/program-4-vol-2-photo-1.jpg',
+      '/images/program-4-vol-2-photo-2.jpg',
+      '/images/program-4-vol-2-photo-3.jpg',
+      '/images/program-4-vol-2-photo-4.jpg',
+    ],
+  },
+]
+
+export default programList

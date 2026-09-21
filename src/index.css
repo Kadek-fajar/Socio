@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen bg-gradient-to-b from-[#20b37e] via-[#0d4f34] to-[#03130c] text-white font-body antialiased;
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-white;
+  }
+}
+
+@layer components {
+  /* Tombol utama - disesuaikan dengan tema hijau & hitam */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-emerald-400 px-6 py-3
+      font-display text-sm font-bold text-slate-950 shadow-lg transition duration-200
+      hover:bg-emerald-300 hover:shadow-emerald-500/25 focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-emerald-400;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3
+      font-display text-sm font-bold text-slate-900 shadow-lg transition duration-200
+      hover:bg-slate-100 hover:shadow-white/20 focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-emerald-400/80
+      px-6 py-3 font-display text-sm font-semibold text-emerald-100 transition duration-200
+      hover:bg-emerald-500/20 hover:border-emerald-300 focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-emerald-400;
+  }
+
+  .section {
+    @apply mx-auto w-full max-w-7xl px-5 py-14 sm:px-8 lg:px-10;
+  }
+
+  .card {
+    @apply rounded-xl2 border border-emerald-400/20 bg-slate-900/40 backdrop-blur-md shadow-lg text-white transition-all duration-200;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-2deg);
+  }
+}
+
+@keyframes sparkle-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25) rotate(15deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(28px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 5s ease-in-out infinite;
+}
+
+.animate-sparkle-twinkle {
+  animation: sparkle-twinkle 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3.5s ease-in-out infinite;
+}
+
