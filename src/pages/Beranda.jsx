@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard'
 import EventCard from '../components/EventCard'
 import VideoPlayer from '../components/VideoPlayer'
 import { HeroBackgroundImage, HeroSparkles } from '../components/HeroIllustrations'
-import produkList from '../data/produk'
+import { useProducts } from '../context/ProductContext'
 import eventList from '../data/event'
 
 const pilar = [
@@ -34,9 +34,10 @@ const pilar = [
   },
 ]
 
-const produkUnggulan = produkList.slice(0, 4)
-
 export default function Beranda() {
+  const { products } = useProducts()
+  const produkUnggulan = products.slice(0, 4)
+
   return (
     <div>
       {/* HERO */}

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { mainNav } from '../data/navigation'
+import { useAuth } from '../context/AuthContext'
 import StoreAwning from './StoreAwning'
 
 // Logo sederhana: rumah + tangan terbuka, melambangkan naungan & kepedulian
@@ -166,6 +167,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileSubOpen, setMobileSubOpen] = useState(null)
   const [mobileChildSubOpen, setMobileChildSubOpen] = useState(null)
+  const { isAdmin } = useAuth()
 
   return (
     <header className="sticky top-0 z-40 bg-[#021810] text-white shadow-2xl border-b border-emerald-500/40 select-none">
@@ -202,8 +204,26 @@ export default function Navbar() {
             )}
           </nav>
 
-          {/* Aksi kanan desktop: 1 Menu Utama "Dukung Panti" */}
+          {/* Aksi kanan desktop: Admin Login / Dashboard & Dukung Panti */}
           <div className="hidden items-center gap-2 lg:flex">
+            {isAdmin ? (
+              <Link
+                to="/dashboard"
+                className="inline-flex items-center gap-1.5 rounded-full bg-emerald-900/60 border border-emerald-400/50 px-3.5 py-1.5 text-xs font-bold text-emerald-300 hover:bg-emerald-800 transition"
+              >
+                <span>🔑</span>
+                <span>Dashboard Admin</span>
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-emerald-200/80 hover:text-white hover:bg-emerald-500/20 transition"
+              >
+                <span>🔐</span>
+                <span>Login Admin</span>
+              </Link>
+            )}
+
             <Link
               to="/dukung-kami"
               className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-5 py-2 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-400/30 ring-2 ring-emerald-300 transition-all duration-300 hover:bg-emerald-300 hover:scale-105 hover:shadow-emerald-400/50"
@@ -356,6 +376,25 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="mt-4 flex flex-col gap-2">
+            {isAdmin ? (
+              <Link
+                to="/dashboard"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-800/80 border border-emerald-400/50 px-4 py-2.5 text-center text-sm font-bold text-emerald-300 shadow transition hover:bg-emerald-700"
+              >
+                <span>🔑</span>
+                <span>Dashboard Admin</span>
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-950 border border-emerald-500/30 px-4 py-2 text-center text-xs font-semibold text-emerald-200 transition hover:bg-emerald-900"
+              >
+                <span>🔐</span>
+                <span>Login Admin</span>
+              </Link>
+            )}
             <Link
               to="/dukung-kami"
               onClick={() => setMobileOpen(false)}

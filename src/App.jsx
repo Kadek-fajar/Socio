@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
+import { AuthProvider } from './context/AuthContext'
+import { ProductProvider } from './context/ProductContext'
+import ProtectedRoute from './components/ProtectedRoute'
 
 import Beranda from './pages/Beranda'
 import TentangPanti from './pages/TentangPanti'
@@ -20,35 +23,46 @@ import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<Beranda />} />
-        <Route path="/tentang" element={<TentangPanti />} />
-        <Route path="/program" element={<ProgramKami />} />
-        <Route path="/program/:id" element={<ProgramKami />} />
+    <AuthProvider>
+      <ProductProvider>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Beranda />} />
+            <Route path="/tentang" element={<TentangPanti />} />
+            <Route path="/program" element={<ProgramKami />} />
+            <Route path="/program/:id" element={<ProgramKami />} />
 
-        <Route path="/produk" element={<Produk />} />
-        <Route path="/produk/:id" element={<DetailProduk />} />
+            <Route path="/produk" element={<Produk />} />
+            <Route path="/produk/:id" element={<DetailProduk />} />
 
-        <Route path="/literasi-keuangan" element={<LiterasiKeuangan />} />
-        <Route path="/literasi-keuangan/materi-program" element={<MateriProgram />} />
-        <Route path="/literasi-keuangan/kalkulator-hpp" element={<KalkulatorHPP />} />
-        <Route path="/literasi-keuangan/kalkulator-laba-rugi" element={<KalkulatorLabaRugi />} />
-        <Route path="/literasi-keuangan/kalkulator-arus-kas" element={<KalkulatorArusKas />} />
+            <Route path="/literasi-keuangan" element={<LiterasiKeuangan />} />
+            <Route path="/literasi-keuangan/materi-program" element={<MateriProgram />} />
+            <Route path="/literasi-keuangan/kalkulator-hpp" element={<KalkulatorHPP />} />
+            <Route path="/literasi-keuangan/kalkulator-laba-rugi" element={<KalkulatorLabaRugi />} />
+            <Route path="/literasi-keuangan/kalkulator-arus-kas" element={<KalkulatorArusKas />} />
 
-        <Route path="/materi-program" element={<MateriProgram />} />
-        <Route path="/materi-program/:id" element={<MateriProgram />} />
+            <Route path="/materi-program" element={<MateriProgram />} />
+            <Route path="/materi-program/:id" element={<MateriProgram />} />
 
-        <Route path="/dukung-kami" element={<DukungKami />} />
+            <Route path="/dukung-kami" element={<DukungKami />} />
 
-        <Route path="/event" element={<Event />} />
-        <Route path="/kontak" element={<Kontak />} />
+            <Route path="/event" element={<Event />} />
+            <Route path="/kontak" element={<Kontak />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
 
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </ProductProvider>
+    </AuthProvider>
   )
 }
