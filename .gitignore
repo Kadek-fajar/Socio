@@ -5,3 +5,7 @@ dist.zip
 *.local
 .DS_Store
 .env
+.env.production
+
+# Credential backend PHP — JANGAN commit ke GitHub
+api/config/database.php

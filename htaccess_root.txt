@@ -1,0 +1,59 @@
+# =====================================================
+# .htaccess — public_html (ROOT)
+# Panti Wira Adhi Karya / Socio
+# =====================================================
+#
+# Tujuan:
+# 1. Teruskan semua request ke /api/* langsung ke file PHP
+# 2. Untuk request non-/api (React SPA), arahkan ke index.html
+# =====================================================
+
+Options -MultiViews
+RewriteEngine On
+
+# ---------- Keamanan ----------
+# Blok akses langsung ke file sensitif
+<FilesMatch "\.(env|sql|log|sh|bak|git)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# ---------- Kompresi ----------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
+
+# ---------- Cache statis ----------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png  "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType text/css   "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# ---------- API PHP — Biarkan Apache tangani langsung ----------
+# Jika request ke /api/* dan file PHP ada → jangan redirect ke index.html
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Jika request ke /api/* tapi file tidak ada → tetap biarkan Apache proses
+# (akan menghasilkan 404 dari PHP, bukan dari React)
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule ^ - [L]
+
+# ---------- React SPA Routing ----------
+# Semua request yang bukan file/folder yang ada → kirim ke index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
+
+# ---------- CORS untuk PHP (Backup jika PHP tidak mengirim header) ----------
+<IfModule mod_headers.c>
+    # Header CORS hanya ditambah jika belum ada (PHP yang akan tangani)
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>

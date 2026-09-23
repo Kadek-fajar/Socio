@@ -1,0 +1,58 @@
+# =====================================================
+# .htaccess — folder api/
+# Panti Wira Adhi Karya / Socio
+# =====================================================
+#
+# Tujuan:
+# 1. Izinkan akses ke file PHP di folder ini
+# 2. Blokir akses ke file konfigurasi sensitif
+# 3. Tambahkan header CORS backup
+# =====================================================
+
+Options -Indexes
+Options -MultiViews
+
+# Blok akses langsung ke folder config dan middleware
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Blok akses ke subfolder sensitif
+    RewriteRule ^config/ - [F,L]
+    RewriteRule ^helpers/ - [F,L]
+    RewriteRule ^middleware/ - [F,L]
+</IfModule>
+
+# Blok akses ke file PHP tertentu yang tidak boleh diakses langsung
+<Files "database.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "jwt.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "response.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "cors.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "auth.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Pastikan Authorization header diteruskan ke PHP
+# (Beberapa shared hosting memblokir header ini)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+# Header CORS tambahan (PHP endpoint sudah handle, ini backup)
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+</IfModule>

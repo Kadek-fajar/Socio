@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import produkList from '../data/produk'
+import { useProducts } from '../context/ProductContext'
 import { formatRupiah } from '../utils/format'
 import BeliProdukModal from '../components/BeliProdukModal'
 
@@ -8,8 +8,9 @@ export default function DetailProduk() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { products } = useProducts()
 
-  const item = produkList.find((p) => String(p.id) === String(id)) || produkList[0]
+  const item = products.find((p) => String(p.id) === String(id)) || products[0]
 
   if (!item) {
     return (

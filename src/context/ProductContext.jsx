@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import produkDataInitial from '../data/produk'
-import { fetchProdukApi, addProdukApi, deleteProdukApi } from '../utils/api'
+import { fetchProdukApi, addProdukApi, deleteProdukApi, updateProdukApi } from '../utils/api'
 import { useAuth } from './AuthContext'
 
 const ProductContext = createContext(null)
@@ -53,8 +53,19 @@ export function ProductProvider({ children }) {
     setProducts((prev) => prev.filter((item) => item.id !== id))
   }
 
+  const updateProduct = async (id, updatedData) => {
+    const updatedItem = await updateProdukApi(id, updatedData, token)
+    if (updatedItem) {
+      setProducts((prev) =>
+        prev.map((item) => (item.id === updatedItem.id ? updatedItem : item))
+      )
+      return updatedItem
+    }
+    throw new Error('Gagal memperbarui produk.')
+  }
+
   return (
-    <ProductContext.Provider value={{ products, loading, addProduct, deleteProduct }}>
+    <ProductContext.Provider value={{ products, loading, addProduct, deleteProduct, updateProduct }}>
       {children}
     </ProductContext.Provider>
   )
